@@ -1,0 +1,6 @@
+services:
+  node-service:
+    image: nickvouzis/bda-assignment-nikos-vouzis:latest
+    container_name: node-service
+    ports:
+      - "4000:4000"

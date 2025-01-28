@@ -1,0 +1,18 @@
+Εργασία Υπολογιστικά Νέφη ΜΔΑ 2025
+
+Η εργασία αποτελείται από μια υπηρεσία Node.js στην οποία ο χρήστης μπορεί να κάνει requests στο http://localhost:4000, και να πάρει ανάλογα responses.
+
+Ο πηγαίος κώδικας βρίσκεται στο αρχείο main.js. Όταν τρέξουμε το Dockerfile με την εντολή "docker build --no-cache -t nickvouzis/bda-assignment-nikos-vouzis:latest .",
+αυτό κατεβάζει τα dependencies απο το package.json και κάνει build το image της εφαρμογής.
+
+Το image αυτό το ανεβάζω στο dockerhub μου με την εντολή "docker push nickvouzis/bda-assignment-nikos-vouzis:latest".
+
+Οι εντολές για το build και το push της υπηρεσίας μπορούν να γίνουν με την εκτέλεση του script "deploy.sh".
+
+Αφού ανέβει επιτυχώς το image στο dockerhub, μπορούμε να τρέξουμε την εντολή "docker compose up" για να λειτουργήσει η εφαρμογή.
+
+Μπορούμε να δοκιμάσουμε την εφαρμογή κάνοντας request με τις παρακάτω εντολές (στα linux):
+
+curl -X GET http://localhost:4000/
+curl -X POST http://localhost:4000/ -H "Content-Type: application/json" -d "{\"data\": \"Sample data\"}"
+curl -X POST http://localhost:4000/ -H "Content-Type: application/json"
